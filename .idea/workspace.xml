@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c10b59bc-03aa-4673-ae7c-1908c42b1ebb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tests/dummy1.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/dummy2.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__mocks__/workerMock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+    </list>
+    <ignored path="C:\Users\nerds\Workspace\flowheap-app\.idea\shelf/" />
+    <ignored path="$PROJECT_DIR$/node_modules/" />
+    <ignored path="$PROJECT_DIR$/functions/node_modules/" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path="C:\Users\nerds\Workspace\webstorm-jest-watch-not-working\.idea\shelf/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="flowheap-app" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="195" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="195" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.babelrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jest.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setupTests.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1420">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/dummy1.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/dummy2.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>handleFilterChange</find>
+      <find>setInsightFilter</find>
+      <find>filterOptions</find>
+      <find>filterDialog</find>
+      <find>readingpagestyle</find>
+      <find>filterValue</find>
+      <find>pageInsightUIDs</find>
+      <find>activeDoc</find>
+      <find>paragraphIndex2Insights</find>
+      <find>DOCUMENTS_COLLECTION</find>
+      <find>participatingUsers</find>
+      <find>config</find>
+      <find>react-pdf</find>
+      <find>worker</find>
+      <find>mapper</find>
+      <find>pageIndex2Insights</find>
+      <find>set</find>
+      <find>jest</find>
+      <find>pageData</find>
+      <find>prop</find>
+      <find>&lt;page</find>
+      <find>propIsParagraphIndex2InsightsMap</find>
+      <find>settings</find>
+      <find>numInsights</find>
+      <find>author</find>
+      <find>user</find>
+      <find>bool</find>
+      <find>bucket</find>
+      <find>get</find>
+      <find>react</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>this.docUID</replace>
+      <replace>updateInsightReactions</replace>
+      <replace>Feedback</replace>
+      <replace>updateEntityReactions</replace>
+      <replace>prop</replace>
+      <replace>Feedback.reactions.values</replace>
+      <replace>stringList</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/app/components/ToggleInput.js" />
+        <option value="$PROJECT_DIR$/app/components/DropdownInput.js" />
+        <option value="$PROJECT_DIR$/app/components/SettingsPage/SettingsPage.js" />
+        <option value="$PROJECT_DIR$/app/components/ProfilePage/ProfilePage.js" />
+        <option value="$PROJECT_DIR$/app/components/ReadingPage/InsightDialog/InsightDialog.js" />
+        <option value="$PROJECT_DIR$/app/components/ReadingPage/DocumentStyleDialog/DocumentStyleDialog.js" />
+        <option value="$PROJECT_DIR$/app/components/NewInsight.js" />
+        <option value="$PROJECT_DIR$/app/actions/Notifications/InsightNotificationCRUDer.js" />
+        <option value="$PROJECT_DIR$/app/actions/Notifications/ReplyInsightNotificationCRUDer.js" />
+        <option value="$PROJECT_DIR$/app/actions/Notifications/DocumentNotificationCRUDer.js" />
+        <option value="$PROJECT_DIR$/app/actions/ReadingPageActions.js" />
+        <option value="$PROJECT_DIR$/app/actions/ShelfActions.js" />
+        <option value="$PROJECT_DIR$/app/components/MarginaliaCard.js" />
+        <option value="$PROJECT_DIR$/app/components/InsightCard.js" />
+        <option value="$PROJECT_DIR$/app/components/DocumentCard.js" />
+        <option value="$PROJECT_DIR$/app/actions/Insights/InsightCRUDer.js" />
+        <option value="$PROJECT_DIR$/app/components/dummy.test.js" />
+        <option value="$PROJECT_DIR$/app/components/NavDrawer/NavItem.teset.js" />
+        <option value="$PROJECT_DIR$/app/components/dummy2.test.js" />
+        <option value="$PROJECT_DIR$/app/components/dummy1.test.js" />
+        <option value="$PROJECT_DIR$/app/actions/Insights/UploadBlobs.js" />
+        <option value="$PROJECT_DIR$/app/components/VoteBar.js" />
+        <option value="$PROJECT_DIR$/app/components/ReactionBar.js" />
+        <option value="$PROJECT_DIR$/app/actions/Utils.js" />
+        <option value="$PROJECT_DIR$/app/components/NavDrawer/NavItem.test.js" />
+        <option value="$PROJECT_DIR$/app/components/ReactionBar.test.js" />
+        <option value="$PROJECT_DIR$/app/components/VoteBar.test.js" />
+        <option value="$PROJECT_DIR$/functions/profiles/functions-client-side/User.js" />
+        <option value="$PROJECT_DIR$/__mocks__/workerMock.js" />
+        <option value="$PROJECT_DIR$/Tests/Utils.js" />
+        <option value="$PROJECT_DIR$/jest.config.js" />
+        <option value="$PROJECT_DIR$/functions/utils/Firestore.js" />
+        <option value="$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.js" />
+        <option value="$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.test.js" />
+        <option value="$PROJECT_DIR$/app/components/PropTypeUtils.js" />
+        <option value="$PROJECT_DIR$/app/components/PropTypeUtils.test.js" />
+        <option value="$PROJECT_DIR$/Tests/dummy2.test.js" />
+        <option value="$PROJECT_DIR$/Tests/dummy1.test.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="80" />
+    <option name="width" value="1942" />
+    <option name="height" value="2092" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webstorm-jest-watch-not-working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm-jest-watch-not-working" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstorm-jest-watch-not-working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm-jest-watch-not-working" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Jest.All Tests">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest">
+      <config-file value="$PROJECT_DIR$/jest.config.js" />
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Page.test.js" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PropTypeUtils.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/app/components/PropTypeUtils.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="&lt;Page /&gt;.isContextViewerPage: YES.insightsIsActive: YES.should render without exploding" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.test.js" />
+      <test-names>
+        <test-name value="&lt;Page /&gt;" />
+        <test-name value="isContextViewerPage: YES" />
+        <test-name value="insightsIsActive: YES" />
+        <test-name value="should render without exploding" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="dummy1.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/jest.config.js" />
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/Tests/dummy1.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="propIsInsightUid2InsightsMap.empty props and random propName" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/components/PropTypeUtils.test.js" />
+      <test-names>
+        <test-name value="propIsInsightUid2InsightsMap" />
+        <test-name value="empty props and random propName" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/functions/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.All Tests" />
+      <item itemvalue="Jest.Page.test.js" />
+      <item itemvalue="Jest.&lt;Page /&gt;.isContextViewerPage: YES.insightsIsActive: YES.should render without exploding" />
+      <item itemvalue="Jest.PropTypeUtils.test.js" />
+      <item itemvalue="Jest.propIsInsightUid2InsightsMap.empty props and random propName" />
+      <item itemvalue="npm.serve" />
+      <item itemvalue="Jest.dummy1.test.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.dummy1.test.js" />
+        <item itemvalue="Jest.PropTypeUtils.test.js" />
+        <item itemvalue="Jest.propIsInsightUid2InsightsMap.empty props and random propName" />
+        <item itemvalue="npm.serve" />
+        <item itemvalue="Jest.&lt;Page /&gt;.isContextViewerPage: YES.insightsIsActive: YES.should render without exploding" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c10b59bc-03aa-4673-ae7c-1908c42b1ebb" name="Default Changelist" comment="" />
+      <created>1548010568288</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548010568288</updated>
+      <workItem from="1548010585291" duration="424000" />
+      <workItem from="1548011042296" duration="39851000" />
+      <workItem from="1548110948252" duration="996000" />
+      <workItem from="1548112034997" duration="61680000" />
+      <workItem from="1548275758785" duration="4077000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed &quot;switching from controlled to uncontrolled component&quot; warning in settings page">
+      <created>1548018483711</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548018483712</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Specified the prop types of &lt;DropdownInput&gt; fixed inconsistencies associated with defaultValue vs value props in react-select">
+      <created>1548036287762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548036287762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactored &lt;ReactsBar&gt; and &lt;VotesBar&gt; such that the handling of the voting is done almost entirely in &lt;ReactBar&gt; and entirely in &lt;VotesBar&gt;">
+      <created>1548057798215</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548057798215</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Intellij stopped working when running All Tests for Jest. Was trying to play around here to make it work again">
+      <created>1548114057285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1548114057285</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created tests for &lt;VoteBar /&gt; and &lt;ReactBar /&gt; 🎉🎉">
+      <created>1548128890266</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1548128890266</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="PropTypeUtils_test_js - 2019.01.23 at 15h 08m 02s.xml">
+      <configuration name="PropTypeUtils.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="propIsInsightUid2InsightsMap_empty_props_and_random_propName - 2019.01.23 at 15h 20m 49s.xml">
+      <configuration name="propIsInsightUid2InsightsMap.empty props and random propName" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.01.23 at 15h 28m 13s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="PropTypeUtils_test_js - 2019.01.23 at 15h 28m 38s.xml">
+      <configuration name="PropTypeUtils.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.01.23 at 15h 56m 54s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.01.23 at 16h 23m 10s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.01.23 at 16h 30m 22s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.01.23 at 16h 42m 40s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="dummy1_test_js - 2019.01.23 at 16h 42m 54s.xml">
+      <configuration name="dummy1.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.01.23 at 16h 44m 49s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="106712000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="34" width="1933" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" sideWeight="0.50113636" side_tool="true" weight="0.015814444" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.50080776" weight="0.14971007" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49886364" visible="true" weight="0.26989985" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" x="12" y="240" width="1897" height="641" id="Find" maximized="true" order="1" type="WINDOWED" weight="0.6944745" />
+      <window_info anchor="bottom" x="1" y="63" width="1919" height="1017" id="Run" order="2" type="WINDOWED" visible="true" weight="0.723727" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35102925" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" x="12" y="438" width="1897" height="244" id="Version Control" maximized="true" order="8" type="WINDOWED" weight="0.26435536" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" x="1" y="63" width="1919" height="1017" id="Terminal" order="10" type="WINDOWED" visible="true" weight="0.5287107" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
+    <MESSAGE value="Fixed &quot;switching from controlled to uncontrolled component&quot; warning in settings page" />
+    <MESSAGE value="Specified the prop types of &lt;DropdownInput&gt; fixed inconsistencies associated with defaultValue vs value props in react-select" />
+    <MESSAGE value="Refactored &lt;ReactsBar&gt; and &lt;VotesBar&gt; such that the handling of the voting is done almost entirely in &lt;ReactBar&gt; and entirely in &lt;VotesBar&gt;" />
+    <MESSAGE value="Intellij stopped working when running All Tests for Jest. Was trying to play around here to make it work again" />
+    <MESSAGE value="Created tests for &lt;VoteBar /&gt; and &lt;ReactBar /&gt; " />
+    <option name="LAST_COMMIT_MESSAGE" value="Created tests for &lt;VoteBar /&gt; and &lt;ReactBar /&gt; " />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.js</url>
+          <line>168</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>this.props</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.props.viewportDimensions</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>randomListOfStrings(5)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>stringList</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>store</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>set</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>set({}, ['a', 'b'], 7)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>set(store, ['a', 'b'], 5)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>set(store, ['app', 'isMobile'], Math.random() &gt; 0.5)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/actions/Notifications/ReplyInsightNotificationCRUDer.js" />
+    <entry file="file://$PROJECT_DIR$/app/actions/Notifications/InsightNotificationCRUDer.js" />
+    <entry file="file://$PROJECT_DIR$/app/actions/Documents/DocumentCRUDer.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/InsightCard.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/MarginaliaCard.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/NewInsight.js" />
+    <entry file="file://$PROJECT_DIR$/app/reducers/rootReducer.js" />
+    <entry file="file://$PROJECT_DIR$/app/store/Store.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/firebase/storage/package.json" />
+    <entry file="file://$PROJECT_DIR$/firebase_config.json" />
+    <entry file="file://$PROJECT_DIR$/app/components/NavDrawer/NavItem.teset.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/dummy2.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/dummy1.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/actions/Insights/InsightCRUDer.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/VoteBar.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReactionBar.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/PDFPage.js" />
+    <entry file="file://$PROJECT_DIR$/app/reducers/appReducer.js" />
+    <entry file="file://$PROJECT_DIR$/app/constants/insightFilterTypes.js" />
+    <entry file="file://$PROJECT_DIR$/functions/firestore-scripts/firestore/add-fields-and-nested-documents/users/update-user-settings.js" />
+    <entry file="file://$PROJECT_DIR$/app/constants/fontNames.js" />
+    <entry file="file://$PROJECT_DIR$/functions/content-extracter/helper-code/document-data-structures/Document.js" />
+    <entry file="file://$PROJECT_DIR$/app/data-structures/Insight.js" />
+    <entry file="file://$PROJECT_DIR$/__mocks__/workerMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pdfjs-dist/webpack.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReadingPage/ReadingPage.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/jest-resolve/build/index.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/prop-types/checkPropTypes.js" />
+    <entry file="file://$PROJECT_DIR$/functions/profiles/functions-client-side/read-only/fontNames.js" />
+    <entry file="file://$PROJECT_DIR$/Tests/Utils.js" />
+    <entry file="file://$PROJECT_DIR$/functions/profiles/functions-client-side/User.js" />
+    <entry file="file://$PROJECT_DIR$/app/actions/Utils.js" />
+    <entry file="file://$PROJECT_DIR$/app/actions/Insights/UploadBlobs.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReadingPage/DocumentPages.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/NavDrawer/NavItem.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReactionBar.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/VoteBar.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.js" />
+    <entry file="file://$PROJECT_DIR$/functions/utils/Firestore.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/PropTypeUtils.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/ReadingPage/DocumentAssets/Page.test.js" />
+    <entry file="file://$PROJECT_DIR$/app/components/PropTypeUtils.test.js" />
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/dummy2.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/dummy1.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="195" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jest.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setupTests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1420">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

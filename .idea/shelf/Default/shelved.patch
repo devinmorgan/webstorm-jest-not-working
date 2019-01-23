@@ -1,0 +1,162 @@
+Index: functions/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Firebase Functions\nconst functions = require('firebase-functions');\n\n// Admin Firebase\nconst admin = require('firebase-admin');\nadmin.initializeApp();\n\nconst cloudFunctionsUtils = require('./utils/CloudFunction');\nconst firestore = admin.firestore();\nfirestore.settings({timestampsInSnapshots: true});\n\nconst { CheckForEpubExistence } = require('./content-extracter/functions-server-side/CheckForEpubExistence');\nconst { ProcessSectionOfEpub } = require('./content-extracter/functions-server-side/ProcessSectionOfEpub');\nconst { ExtractAndSaveEpubContent } = require('./content-extracter/functions-server-side/ExtractAndSaveEpubContent');\nconst { ProcessPossiblyNewInternetArticle } = require('./content-extracter/functions-server-side/ProcessPossiblyNewInternetArticle');\nconst { BuildEpubDataStructure } = require('./content-extracter/functions-server-side/BuildEpubDataStructure');\nconst { ExtractMetadataFromUrls } = require('./link-preview/functions-server-side/ExtactMetadataFromUrl');\nconst { IntraDocumentSearch } = require('./search/functions-server-side/IntraDocumentSearch');\nconst { InterDocumentSearch } = require('./search/functions-server-side/InterDocumentSearch');\nconst { UserSearch } = require('./search/functions-server-side/UserSearch');\nconst { SendNotificationSummaryEmails } = require('./cron-jobs/emails/SendNotificationSummaryEmails');\n\n\nexports.checkEpubForExistenceCloudFunc = functions.runWith(cloudFunctionsUtils.checkEpubForExistenceCloudFunc.runtime_options).https.onCall((data, context) => {\n    return CheckForEpubExistence(data.bucketOffsetPath);\n});\n\nexports.buildEpubDataStructureCloudFunc = functions.runWith(cloudFunctionsUtils.buildEpubDataStructureCloudFunc.runtime_options).https.onCall((data, context) => {\n    return BuildEpubDataStructure(\n        data.bucketOffsetPath,\n        data.requiredStorageJsonFiles,\n        data.userUid\n    );\n});\n\nexports.processSectionOfEpubCloudFunc = functions.runWith(cloudFunctionsUtils.processSectionOfEpubCloudFunc.runtime_options).https.onCall((data, context) => {\n    return ProcessSectionOfEpub(\n        data.bucketOffsetPath,\n        data.targetFileOffsetPath,\n        data.inOrderRelSectionPaths,\n        data.userUid\n    );\n});\n\nexports.extractAndSaveEpubContentCloudFunc = functions.runWith(cloudFunctionsUtils.extractAndSaveEpubContentCloudFunc.runtime_options).https.onCall((data, context) => {\n    return ExtractAndSaveEpubContent(data.bucketOffsetPath, data.userUid);\n});\n\nexports.processPossiblyNewInternetArticleCloudFunc = functions.runWith(cloudFunctionsUtils.processPossiblyNewInternetArticleCloudFunc.runtime_options).https.onCall((data, context) => {\n    return ProcessPossiblyNewInternetArticle(data.url, data.userUid);\n});\n\nexports.extractMetadataFromUrlsCloudFunc = functions.runWith(cloudFunctionsUtils.extractMetadataFromUrlsCloudFunc.runtime_options).https.onCall((data, context) => {\n    return ExtractMetadataFromUrls(data.url);\n});\n\nexports.intraDocumentSearchCloudFunc = functions.runWith(cloudFunctionsUtils.intraDocumentSearchCloudFunc.runtime_options).https.onCall((data, context) => {\n    return IntraDocumentSearch(data.pattern, data.docUID);\n});\n\nexports.generalSearchCloudFunc = functions.runWith(cloudFunctionsUtils.generalSearchCloudFunc.runtime_options).https.onCall((data, context) => {\n    return Promise.all([UserSearch(data.pattern), InterDocumentSearch(data.pattern)])\n        .then( values => {\n            return {\n                matchedUsers: values[0],\n                matchedDocuments: values[1],\n            }\n        });\n});\n\nexports.sendNotificationSummaryEmailsCloudFunc = functions.runWith(cloudFunctionsUtils.sendNotificationSummaryEmailsCloudFunc.runtime_options).https.onRequest((req, res) => {\n    return SendNotificationSummaryEmails(req.headers.authorization)\n        .then(result => res.send(result), error => res.send(error));\n        // .then(emailHtml => res.send(emailHtml[0]))\n});\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- functions/index.js	(date 1539977992000)
++++ functions/index.js	(date 1539988712792)
+@@ -62,6 +62,7 @@
+     return Promise.all([UserSearch(data.pattern), InterDocumentSearch(data.pattern)])
+         .then( values => {
+             return {
++                query: data.pattern,
+                 matchedUsers: values[0],
+                 matchedDocuments: values[1],
+             }
+Index: functions/package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"name\": \"functions\",\n  \"description\": \"Cloud Functions for Firebase\",\n  \"engines\": {\n    \"node\": \"6\"\n  },\n  \"scripts\": {\n    \"lint\": \"eslint .\",\n    \"serve\": \"firebase serve --only functions\",\n    \"shell\": \"firebase functions:shell\",\n    \"start\": \"npm run shell\",\n    \"deploy\": \"firebase deploy --only functions\",\n    \"logs\": \"firebase functions:log\",\n    \"build\": \"npm run duplicate-notification-constants && npm run build-email-templates && npm run duplicate-route-constants\",\n    \"build-email-templates\": \"babel ../app/email-templates-builders --out-dir cron-jobs/emails/read-only/templates\",\n    \"duplicate-notification-constants\": \"babel ../app/constants/notificationConstants.js --out-file cron-jobs/emails/read-only/notificationConstants.js\",\n    \"duplicate-route-constants\": \"babel ../app/constants/views.js --out-file cron-jobs/emails/read-only/constants/views.js\"\n  },\n  \"dependencies\": {\n    \"@google-cloud/storage\": \"^1.7.0\",\n    \"axios\": \"^0.18.0\",\n    \"base-64\": \"^0.1.0\",\n    \"busboy\": \"^0.2.14\",\n    \"del\": \"^3.0.0\",\n    \"extract-zip\": \"^1.6.7\",\n    \"firebase\": \"^5.2.0\",\n    \"firebase-admin\": \"^6.0.0\",\n    \"firebase-functions\": \"^2.0.4\",\n    \"firebase-tools\": \"^4.0.3\",\n    \"follow-redirects\": \"^1.5.2\",\n    \"image-size\": \"^0.6.3\",\n    \"jsdom\": \"^11.11.0\",\n    \"lodash\": \"^4.17.11\",\n    \"mailgun-js\": \"^0.21.0\",\n    \"normalize-url\": \"^3.2.0\",\n    \"parse-full-name\": \"^1.2.3\",\n    \"probe-image-size\": \"^4.0.0\",\n    \"react\": \"^16.5.2\",\n    \"react-dom\": \"^16.5.2\",\n    \"sbd\": \"^1.0.12\",\n    \"uuid\": \"^3.3.2\",\n    \"uuid-by-string\": \"^0.6.0\",\n    \"xml2js\": \"^0.4.19\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^4.12.0\",\n    \"eslint-plugin-promise\": \"^3.6.0\"\n  },\n  \"private\": true\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- functions/package.json	(date 1539977992000)
++++ functions/package.json	(date 1539985528344)
+@@ -38,6 +38,7 @@
+     "react": "^16.5.2",
+     "react-dom": "^16.5.2",
+     "sbd": "^1.0.12",
++    "stopword": "^0.1.13",
+     "uuid": "^3.3.2",
+     "uuid-by-string": "^0.6.0",
+     "xml2js": "^0.4.19"
+Index: functions/firestore-scripts/firestore/add-fields-and-nested-documents/insights/add-paragraph-indices-to-insights.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const firebase = require('firebase-admin');\nfirebase.initializeApp();\nconst firestore = firebase.firestore();\n\nconst firestoreUtils = require('../../../../utils/Firestore');\nconst INSIGHTS_COLLECTION = firestoreUtils.collections.insights.NAME;\nconst DOCUMENTS_COLLECTION = firestoreUtils.collections.documents.NAME;\nconst HIGHLIGHTS_COLLECTION = firestoreUtils.collections.documents.highlights.NAME;\nconst PAGES_COLLECTION = firestoreUtils.collections.documents.pages.NAME;\n\n\nconst extractInsightStartParagraphIndex = (stringifiedData, startBitIndex) => {\n    const wordIndexObjectRegexForStartBit = new RegExp(`{\"(pageIndex|sentenceIndex|paragraphIndex|bitIndex)\":\\\\d+\\\\,\"(pageIndex|sentenceIndex|paragraphIndex|bitIndex)\":\\\\d+,\"(pageIndex|sentenceIndex|paragraphIndex|bitIndex)\":\\\\d+,\"(pageIndex|sentenceIndex|paragraphIndex|bitIndex)\":\\\\d+}`, 'gim');\n    let match;\n    while ((match = wordIndexObjectRegexForStartBit.exec(stringifiedData)) !== null) {\n        const indexObject = JSON.parse(match[0]);\n        if (indexObject.bitIndex === startBitIndex) { return indexObject.paragraphIndex }\n    }\n};\nlet count = 0;\nfirestore\n    .collection(INSIGHTS_COLLECTION)\n    // .limit(500)\n    .get()\n    .then(insightQuery => {\n        // 1) for each insight get its .doc and .uid field ✅\n        // 2) go to the documents/<.doc>/Highlights .where(.insights.uid, ==, true)\n        // 2.a) get the .startBit, .endBit and the .pageIndex fields from the highlightDoc\n        // 3) go to the documents/<.doc>/Pages/<padded(.pageIndex)\n        // 3.a) get the JSON.parse(doc.data()) and look for matc✅hes to\n        let updatedInsights = Promise.resolve();\n        for (const insight of insightQuery.docs) {\n            updatedInsights = updatedInsights.then(() => {\n                const {doc, uid, highlights, text, type} = insight.data();\n                const desiredHighlighUID = Object.keys(highlights)[0];\n                return firestore\n                    .collection(DOCUMENTS_COLLECTION)\n                    .doc(doc)\n                    .collection(HIGHLIGHTS_COLLECTION)\n                    .doc(desiredHighlighUID)\n                    .get()\n                    .then(highlightDoc => {\n                        if (!highlightDoc.exists) {\n                            console.log(`Total Count: ${++count}\n                            Highlight does not exist: /${DOCUMENTS_COLLECTION}/${doc}/${HIGHLIGHTS_COLLECTION}/${highlightDoc.id}\n                            Insight: /${INSIGHTS_COLLECTION}/${uid}\n                            Text: ${text}\n                            Type: ${type}\n                            Deleting: \uD83D\uDD25\uD83D\uDD25\uD83D\uDD25\uD83D\uDD25\uD83D\uDD25\uD83D\uDD25\n                            `);\n                            return highlightDoc.ref.delete();\n                        } else {\n                            return highlightDoc.data();\n                        }\n                    })\n                    .then(({startBit, endBit, pageIndex}) => {\n                        if (startBit === undefined && endBit === undefined && pageIndex === undefined) {\n                            return Promise.resolve();\n                        } else {\n                            return firestore\n                                .collection(DOCUMENTS_COLLECTION)\n                                .doc(doc)\n                                .collection(PAGES_COLLECTION)\n                                .where('index.pageIndex', '==', parseInt(pageIndex, 10))\n                                .get()\n                                .then(pageQuery => {\n                                    const desiredPageDocData = pageQuery.docs[0].data();\n                                    const stringifiedData = JSON.stringify(desiredPageDocData);\n                                    const startParagraphIndex = extractInsightStartParagraphIndex(stringifiedData, startBit);\n                                    console.log(`Insight: ${insight.ref.path}\\t\\tParagraphIndex: ${startParagraphIndex}`);\n                                    return insight.ref.update({\n                                        pageIndex: firebase.firestore.FieldValue.delete(),\n                                        index: {\n                                            startBit,\n                                            endBit,\n                                            startParagraphIndex,\n                                            endParagraphIndex: startParagraphIndex,\n                                            startPageIndex: pageIndex,\n                                            endPageIndex: pageIndex\n                                        }\n                                    });\n                                });\n                        }\n                    })\n            });\n        }\n\n        return updatedInsights;\n    });
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- functions/firestore-scripts/firestore/add-fields-and-nested-documents/insights/add-paragraph-indices-to-insights.js	(date 1539977992000)
++++ functions/firestore-scripts/firestore/add-fields-and-nested-documents/insights/add-paragraph-indices-to-insights.js	(date 1539980284829)
+@@ -86,4 +86,5 @@
+         }
+ 
+         return updatedInsights;
+-    });
+\ No newline at end of file
++    })
++    .catch(error => console.log(error));
+\ No newline at end of file
+Index: functions/search/functions-server-side/UserSearch.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Admin Firebase\nconst admin = require('firebase-admin');\n// admin.initializeApp();\nconst firestore = admin.firestore();\n\nconst firestoreUtils = require('../../utils/Firestore');\n\nconst USERS_COLLECTION = firestoreUtils.collections.users.NAME;\nconst invalidCharacters = /[^_a-zA-Z0-9 ]+/;\n\nconst UserSearch = (/*String*/pattern) => {\n    if (pattern.match(invalidCharacters)) {\n        return { isValidQuery: false, query: pattern }\n    }\n\n    const response = {\n        isValidQuery: true,\n        query: pattern,\n        matches: {\n            username: {},\n            fullname: {},\n        },\n        summaries: {}\n    };\n\n    const wordRegExp = new RegExp(`(^| )${pattern}.*$`, 'i');\n    return firestore.collection(USERS_COLLECTION).get()\n        .then( querySnapshot => {\n            for (let doc of querySnapshot.docs) {\n                const docData = doc.data();\n                const {name, uid, username, avatarURL} = docData;\n                const summary = { name, uid, avatarURL, username };\n\n                const matchFullname = name.fullName.match(wordRegExp);\n                if (matchFullname) {\n                    response.matches.fullname[uid] = true;\n                    response.summaries[uid] = summary;\n                }\n\n                const matchUsername = username.match(wordRegExp);\n                if (matchUsername) {\n                    response.matches.username[uid] = true;\n                    response.summaries[uid] = summary;\n                }\n            }\n\n            return response;\n        });\n};\nmodule.exports.UserSearch = UserSearch;\n\n// const keyWord = \"Dumb\";\n// console.log(\"starting!\");\n// UserSearch(keyWord).then( result => {\n//     console.log(result);\n//     console.log(\"done!\");\n// });
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- functions/search/functions-server-side/UserSearch.js	(date 1539977992000)
++++ functions/search/functions-server-side/UserSearch.js	(date 1539988880562)
+@@ -10,15 +10,14 @@
+ 
+ const UserSearch = (/*String*/pattern) => {
+     if (pattern.match(invalidCharacters)) {
+-        return { isValidQuery: false, query: pattern }
++        return { isValidQuery: false}
+     }
+ 
+     const response = {
+         isValidQuery: true,
+-        query: pattern,
+         matches: {
+             username: {},
+-            fullname: {},
++            fullName: {},
+         },
+         summaries: {}
+     };
+@@ -31,9 +30,9 @@
+                 const {name, uid, username, avatarURL} = docData;
+                 const summary = { name, uid, avatarURL, username };
+ 
+-                const matchFullname = name.fullName.match(wordRegExp);
+-                if (matchFullname) {
+-                    response.matches.fullname[uid] = true;
++                const matchFullName = name.fullName.match(wordRegExp);
++                if (matchFullName) {
++                    response.matches.fullName[uid] = true;
+                     response.summaries[uid] = summary;
+                 }
+ 
+Index: functions/search/functions-server-side/InterDocumentSearch.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Admin Firebase\nconst admin = require('firebase-admin');\n// admin.initializeApp();\nconst firestore = admin.firestore();\n\nconst firestoreUtils = require('../../utils/Firestore');\n\nconst DOCUMENT_COLLECTION = firestoreUtils.collections.documents.NAME;\nconst SEARCHABLE_DOCUMENT_FIELDS = [\"title\", \"author\"];\n\nconst computeMatchScore = (docFieldValue, lowerCasePattern) => {\n    // TODO: implement me!!!\n};\n\nconst InterDocumentSearch = (/*String*/pattern) => {\n    const lowerCasePattern = pattern.toLowerCase().trim();\n    return firestore\n        .collection(DOCUMENT_COLLECTION)\n        .get()\n        .then( querySnapshot => {\n            const response = {\n                isValidQuery: true,\n                descSortMatchedUIDs: {},\n                matchedDocumentMetadatas: {},\n            };\n\n            const docUIDTable = {};\n            if (querySnapshot.size > 0) {\n                for (const document of querySnapshot.docs) {\n                    const docData = document.data();\n                    for (const field of SEARCHABLE_DOCUMENT_FIELDS) {``\n                        const matchScore = computeMatchScore(docData[field], lowerCasePattern);\n                        if (matchScore > 0) {\n                            if (!docUIDTable[field]) { docUIDTable[field] = {} }\n\n                            docUIDTable[field][document.id] = {\n                                matchScore,\n                                docData,\n                            };\n                        }\n                    }\n                }\n\n                for (const field in docUIDTable) {\n                    if (docUIDTable.hasOwnProperty(field)) {\n                        const matchedFieldDocUIDs = Object.keys(docUIDTable[field]);\n\n                        // sort the documents by score in descending order and add this\n                        // to descSortMatchedUIDs under the current field type\n                        response.descSortMatchedUIDs[field] = matchedFieldDocUIDs\n                            .sort((docUID1, docUID2) => {\n                                const doc1MatchScore = docUIDTable[field][docUID1];\n                                const doc2MatchScore = docUIDTable[field][docUID2];\n                                return doc2MatchScore - doc1MatchScore;\n                            });\n\n                        // supply all of the matched document metdatas to the\n                        // matchedDocumentMetadatas in the response\n                        matchedFieldDocUIDs\n                            .forEach(docUID => response.matchedDocumentMetadatas[docUID] = docUIDTable[field][docUID].docData)\n                    }\n                }\n            }\n\n            return response;\n    });\n};\nmodule.exports.InterDocumentSearch = InterDocumentSearch;\n\n// const keyWord = \"budget\";\n// console.log(\"starting!\");\n// InterDocumentSearch(keyWord).then( result => {\n//     console.log(result);\n//     console.log(\"done!\");\n// });
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- functions/search/functions-server-side/InterDocumentSearch.js	(date 1539977992000)
++++ functions/search/functions-server-side/InterDocumentSearch.js	(date 1539988712803)
+@@ -2,25 +2,36 @@
+ const admin = require('firebase-admin');
+ // admin.initializeApp();
+ const firestore = admin.firestore();
++const sw = require('stopword');
+ 
+ const firestoreUtils = require('../../utils/Firestore');
+ 
+ const DOCUMENT_COLLECTION = firestoreUtils.collections.documents.NAME;
+ const SEARCHABLE_DOCUMENT_FIELDS = ["title", "author"];
+ 
+-const computeMatchScore = (docFieldValue, lowerCasePattern) => {
+-    // TODO: implement me!!!
++const getLowerCaseKeyWordsFromString = str => sw.removeStopwords(str.toLowerCase().split(" "));
++
++const computeMatchScore = (docFieldValue, keyWords) => {
++    const docFieldValueKeyWords = getLowerCaseKeyWordsFromString(docFieldValue);
++    const N = docFieldValueKeyWords.length;
++    const score = keyWords.reduce((acc, kw) => {
++        const i = docFieldValueKeyWords.indexOf(kw);
++        if (i === -1) { return 0 }
++        else { return acc + (N - i) / N }
++    }, 0);
++    return score;
+ };
+ 
+ const InterDocumentSearch = (/*String*/pattern) => {
+-    const lowerCasePattern = pattern.toLowerCase().trim();
++    const keyWords = getLowerCaseKeyWordsFromString(pattern);
+     return firestore
+         .collection(DOCUMENT_COLLECTION)
+         .get()
+         .then( querySnapshot => {
+             const response = {
++                keyWordsUsed: keyWords,
+                 isValidQuery: true,
+-                descSortMatchedUIDs: {},
++                descSortMatchedUIDs: [],
+                 matchedDocumentMetadatas: {},
+             };
+ 
+@@ -28,8 +39,8 @@
+             if (querySnapshot.size > 0) {
+                 for (const document of querySnapshot.docs) {
+                     const docData = document.data();
+-                    for (const field of SEARCHABLE_DOCUMENT_FIELDS) {``
+-                        const matchScore = computeMatchScore(docData[field], lowerCasePattern);
++                    for (const field of SEARCHABLE_DOCUMENT_FIELDS) {
++                        const matchScore = computeMatchScore(docData[field], keyWords);
+                         if (matchScore > 0) {
+                             if (!docUIDTable[field]) { docUIDTable[field] = {} }
+ 
+@@ -67,7 +78,7 @@
+ };
+ module.exports.InterDocumentSearch = InterDocumentSearch;
+ 
+-// const keyWord = "budget";
++// const keyWord = "terrible at thinking";
+ // console.log("starting!");
+ // InterDocumentSearch(keyWord).then( result => {
+ //     console.log(result);
